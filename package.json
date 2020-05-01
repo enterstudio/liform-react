@@ -11,7 +11,9 @@
     "lint": "eslint src",
     "test": "mocha --compilers js:babel-register --recursive 'src/**/__tests__/*' --require src/__tests__/setup.js",
     "test:cov": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text npm test",
-    "dev": "webpack-dev-server --content-base examples --config examples/webpack.config.js --inline --hot"
+    "dev": "webpack-dev-server --content-base examples --config examples/webpack.config.js --inline --hot",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "react",
@@ -59,6 +61,8 @@
     "ajv": "^4.11.3",
     "classnames": "^2.2.5",
     "lodash": "^4.10.0",
-    "redux-form": "^6.0.2"
-  }
+    "redux-form": "^6.0.2",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
